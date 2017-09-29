@@ -1,0 +1,10 @@
+If you want to load other pages properly you need to update your page, style.css as well as main.js.
+For example if you are using a page called contacts.html, then change this line
+<body class="cd-about"> to <body class="cd-contacts"> and this line <div class="cd-about cd-main-content"> to <div class="cd-contacts cd-main-content">.
+
+Because, in main.js the file name is used to create a section. Similarly in the main.js look for the line ( section.hasClass('cd-about') ) ? $('body').addClass('cd-about') : $('body').removeClass('cd-about'); and add another one just below it,
+( section.hasClass('cd-contacts') ) ? $('body').addClass('cd-contacts') : $('body').removeClass('cd-contacts');
+
+Now in style.css, search for all the classes that have .cd-about copy and paste them at the bottom and replace cd-about with cd-contacts. (Mind you this is only for the newly copy pasted one) so, you will have two sets of classes, one for about and one for contacts.
+
+And you are done. Repeat this process for all the pages you add. remember the section name is your-page-name minus the extension, which is html.
